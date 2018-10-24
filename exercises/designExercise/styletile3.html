@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="base-styles.css">
+    <title>Style Tile</title>
+
+    <style>
+       /* Set Typography Base Font and Color */
+
+        @import url('https://fonts.googleapis.com/css?family=Mali:200,300,400,500,600,700');
+
+#typography, #buttons, #adjectives span {
+    font-family: "Mali", Georgia, 'Times New Roman', Times, serif;
+}
+
+#typography {
+    background-color: #fff;
+}
+
+/* Set Typography Examples */
+
+        #typography h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin: 0;
+            color: #A4D555;
+        }
+
+        #typography h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin: 0;
+            color: #4CDEF5;
+        }
+
+        #typography h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.1;
+            margin: 0;
+            color: #4CDEF5;
+        }
+
+        #typography p {
+            font-size: .9rem;
+            font-weight: 200;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        a {
+            color: #841983;
+            text-decoration: none;
+            border-bottom: 1px dotted;
+        }
+
+        a:hover {
+            color: #FF5992;
+        }
+
+        /* Set Button Colors */
+        
+        #buttons p {
+            background-color: #841983;
+            color: white;
+        }
+
+        #buttons p:hover {
+            background-color: #FF5992;
+        }
+
+        /* Set Color Swatches */
+
+        #square-one {
+            background: #4CDEF5;
+        }
+
+        #square-two {
+            background: #A4D555;
+        }
+
+        #square-three {
+            background: #FF5992;
+            color: white;
+        }
+
+        #square-four {
+            background: #841983;
+            color: white;
+        }
+
+        #square-five {
+            background: #000;
+            color: white;
+        }
+
+        /* Set Texture Swatches */
+
+        #texture-one {
+            background-image: url(https://background-tiles.com/overview/white/textures/large/5004.png);
+        }
+
+        #texture-two {
+            background-image: url(https://background-tiles.com/overview/white/textures/large/5022.png);
+        }
+
+        #texture-three {
+            background-image: url(https://background-tiles.com/overview/white/textures/large/5011.png);
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <h1>Logo Here</h1>
+        </div>
+        <div id="project">
+            <h2>Your Name's IGME 110 Web Project Style Tile</h2>
+            <h4><a href="index.html">Version 1</a> &bull; <a href="styletile2.html">Version 2</a> &bull; <span class="selected">Version 3</span></h4>
+        </div>
+    </header>
+
+    <main>
+        <div id="elements" class="alignleft">
+            <div id="colors">
+                <h3>Possible Colors</h3>
+                <div class="square">
+                    <div id="square-one">#4CDEF5</div>
+                </div>
+                <div class="square">
+                    <div id="square-two">#A4D555</div>
+                </div>
+                <div class="square">
+                    <div id="square-three">#FF5992</div>
+                </div>
+                <div class="square">
+                    <div id="square-four">#841983</div>
+                </div>
+                <div class="square">
+                    <div id="square-five">#000000</div>
+                </div>
+            </div>
+
+            <div id="textures">
+                <h3>Textures</h3>
+                <div class="bigsquare">
+                    <div id="texture-one"></div>
+                </div>
+                <div class="bigsquare">
+                    <div id="texture-two"></div>
+                </div>
+                <div class="bigsquare">
+                    <div id="texture-three"></div>
+                </div>
+            </div>
+
+            <div id="buttons">
+                <h3>Buttons</h3>
+                <p>This is a Sample Button</p>
+            </div>
+
+        </div>
+
+        <div id="words" class="alignright">
+            <div id="typography">
+                <h1>This Is An H1 Header</h1>
+                <p class="font">Font: Mali 900, 2rem, #000</p>
+
+                <h2>This Is An H2 Subheader</h2>
+                <p class="font">Font: Mali 600, 1.5rem, #000</p>
+
+                <h3>This Is An H3 Subheader</h3>
+                <p class="font">Font: Mali 400, 1.2rem, #000</p>
+
+                <p>If my website was about a casual social group, or something for kids or families, I'd be more likely to go with bright and friendly colors, and a handwriting style font--although I'd want the font to still be highly legible (and not cliched).<br>
+                    <span class="font">Mali 200, .9rem, #000</span></p>
+
+                <p><a href="#">This is what a link looks like.</a></p>
+            </div>
+
+            <div id="adjectives">
+                <h2>Adjectives</h2>
+                <p>
+                    <span>Friendly</span>
+                    <span>Casual</span>
+                    <span>Informal</span>
+                    <span>Playful</span>
+                    <span>Personal</span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Adapted from <a href="https://github.com/Pardot/Responsive-Boilerplate-for-Style-Tiles">Pardot's Responsive Boilerplate</a> template for <a href="http://styletil.es">Style Tiles</a></p> 
+    </footer>
+
+
+</body>
+
+</html>

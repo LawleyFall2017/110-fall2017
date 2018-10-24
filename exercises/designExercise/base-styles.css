@@ -1,0 +1,156 @@
+/* Global Settings (do not change) */
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:100,200,300,400,500,600,700,800,900');
+
+* {box-sizing: border-box;}
+h1,h2,h3,h4,h5,h6 {font-weight: 600;}
+
+
+html {
+font-family: "Libre Franklin", Helvetica, Arial, sans-serif;
+font-size: 16px;
+}
+
+
+body {
+    width: 100%;
+    margin: 0 0 20px;
+}
+
+.alignleft { float:left; }
+
+.alignright { float:right; }
+
+
+header {
+    color: black;
+}
+
+header h1 {
+    background: white;
+    box-shadow: 0 1px 5px 1px #222;
+    float: left;
+    font-size: 2rem;
+    width: auto;
+    margin: 0 20px 0 30px;
+    padding: 50px;
+}
+
+header h2 {
+    color: white;
+    background: black;
+    margin: 0;
+    padding: 10px;
+}
+
+header h4, header p {
+    margin: 5px 0;
+}
+
+.selected {
+    font-weight: 800;
+}
+
+main {
+    clear: both;
+    margin: 20px 0;
+    padding: 0 40px;
+}
+
+#elements {
+    width: 37%;
+}
+
+#words {
+    width: 57%;
+}
+
+#colors {
+    clear: both;
+}
+
+.square, .bigsquare {
+    box-shadow: 1px 1px 5px 1px #666;
+    float: left;
+    height: 60px;
+    width: 60px;
+    margin: 0 15px 10px 0;
+    padding: 5px;
+}
+
+#square-one, #square-two, #square-three, #square-four, #square-five {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .5rem;
+}
+
+#textures {
+    clear: both;
+    padding-top: 20px;
+}
+
+.bigsquare {
+    height: 100px;
+    width: 100px;
+}
+
+#texture-one, #texture-two, #texture-three {
+    height: 100%;
+    width: 100%;
+}
+
+#buttons {
+    clear: both;
+    padding-top: 20px;
+}
+
+#buttons p {
+    float: left;
+    font-size: .9rem;
+    font-weight: 400;
+    text-decoration: none;
+    margin: 0 10px 10px 0;
+    padding: 20px;
+}
+
+#buttons p:hover {
+    cursor: pointer;
+}
+
+#typography {
+    padding: 10px; 
+}
+
+#typography .font {
+    font-size: .7rem;
+    font-weight: 200;
+    color: gray;
+    margin-top: 0;
+}
+
+#adjectives {
+    background-color: #eee;
+    padding: 2px 10px;
+    margin-bottom: 5px;
+}
+
+#adjectives span {
+    font-size: 2rem;
+    margin-right: 30px;
+}
+
+footer {
+    clear: both;
+    background-color: #ccc;
+    font-size: .9rem;
+    line-height: 1.4;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}

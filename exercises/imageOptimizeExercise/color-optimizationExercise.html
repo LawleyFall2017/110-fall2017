@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>color-optimizationExercise</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h2 id="image-basics-color-compression-and-file-optimization">Image Basics: Color, Compression, and File Optimization</h2>
+<h3 id="part-1-color-models">Part 1: Color Models</h3>
+<p>For today’s exercise, you’ll need to download and extract the files in <a href="color-optimizationExerciseFiles.zip">week9exercisefiles.zip</a>.</p>
+<ol type="1">
+<li><p>From the archive you just downloaded, open the file Sunflower150.jpg in Photoshop.</p></li>
+<li><p>Display the Channels Window (Window &gt; Channels)</p></li>
+<li><p>View the ImageMode menu. The current color mode of the image (RGB, PhotoShop’s default) has a check mark next to it in the mode menu.</p></li>
+<li><p>Switch the mode to CMYK. (If you get a warning, click Yes to proceed.) Note the changes in the Channels window.</p></li>
+<li><p>Now switch the mode to Grayscale. Discard color changes when asked. What happens to the Channels window? Look at the mode menu: what’s different?</p></li>
+<li><p>After you choose the grayscale option, which discards color but retains 256 shades of gray to provide detail in the image, the Bitmap option becomes available. This refers to the strictest definition of a bitmap, where each pixel in the image is mapped to one bit of information; on or off, white or black.</p></li>
+<li><p>Change the mode to Bitmap. Set the output resolution to 96ppi and the diffusion method to Diffusion Dither. Try zooming in, so you can see the individual pixels.</p></li>
+<li><p>After viewing the results, select History from the Window menu. You will see a list of your modifications to the image. Select the CMYK color version. The Grayscale and Bitmap versions are now grayed out in the History window. You can select these again right now, but if you make any modifications to the CMYK image, the Grayscale and Bitmap options will disappear from the History, and your new changes will replace them.</p></li>
+<li><p>Close this file. (You don’t need to save the changes.) We’re done with it.</p></li>
+</ol>
+<p> ## Part 2: Color Depth and Palette</p>
+<p>In the previous section we changed color modes, which indirectly changed the color palettes available (as you should remember from lecture, CMYK and RGB have overlapping but different palettes of colors, while grayscale and bitmap use only variations on black and white).</p>
+<p>In this part of the exercise, you’ll be working more directly with palettes, particularly in Indexed Color mode, which restricts you to 256 or fewer colors in the palette (unlike RGB and CMYK, which have millions of available colors in their palettes).</p>
+<ol type="1">
+<li><p>Open the image cartoon.psd.</p></li>
+<li><p>Zoom in to view the image at 200%. (Either ViewZoom In, or change the display setting in the bottom left corner to 200%.)</p></li>
+<li><p>From the Image &gt; Mode menu, select Indexed Color.</p></li>
+<li><p>Make sure the settings are shown below:</p></li>
+<li>Try the following, noting the changes in the image (in particular, observe the changes to the gradients in the hammer):</li>
+</ol>
+<ul>
+<li>Change the Dither from Diffusion to Pattern to None.</li>
+<li>Change Color Depth to 8 colors and repeat the dither changes.</li>
+<li>Change the palette to the Web Palette rather than Local. How many colors is it using now?</li>
+</ul>
+<ol start="6" type="1">
+<li><p>Experiment with the diffusion settings to get the best version of the image you can using the Web Safe palette.</p></li>
+<li><p>Save the indexed color as a GIF called webcartoon1.gif (the GIF format is called Compuserve GIF in the Save As menu, because of a patent on the format).</p></li>
+</ol>
+<h2 id="part-3-compression-and-file-types">Part 3: Compression and File Types</h2>
+<p>The three file types most important to us for interactive media use GIF, JPEG and PNG. This was covered in the readings for this week, but you can read through the <a href="https://en.wikipedia.org/wiki/Image_file_formats">“Image File Formats” Wikipedia article</a> for a review of how they differ.</p>
+<p>We’ll start by looking at the same image after we’ve used FileExportSave for Web to save it with four different settings.</p>
+<ol type="1">
+<li><p>Open up Falls.psd, which is a Photoshop format file.</p></li>
+<li><p>Select File-&gt;Export-&gt;Save for Web (Legacy), and choose “4-Up” on the tab at the top</p></li>
+<li><p>Select the image in the top left corner, and in the panel on the right side of the window, look at the various preset options. Choose GIF 128 Dithered.</p></li>
+<li><p>Select the image in the top right corner, and choose the PNG-8 128 Dithered preset for it.</p></li>
+<li><p>Select the image in the bottom right corner, and choose the PNG-24 preset.</p></li>
+<li><p>Finally, select the image in the bottom left corner, and use the JPEG Medium preset.</p></li>
+<li><p>Is there a noticeable difference in quality? Try using the menu in the bottom left to zoom in to 300% , and scroll around the image a bit–do you see a difference now?</p></li>
+<li><p>Compare the file sizes of the four files …. which is largest? Why do you think that is?</p></li>
+<li><p><em>Cancel</em> out of the Save for Web view, and close the Falls.psd file.</p></li>
+</ol>
+<h2 id="part-4-gif-compression">Part 4: GIF Compression</h2>
+<ol type="1">
+<li><p>Open stripes.psd. Change the Image-&gt;Mode to indexed color. Use FileSave As to save it as stripes1.gif. (Use the defaults for both changing the mode and saving the file.)</p></li>
+<li><p>Open stripes.psd again, and choose Image &gt; Image Rotation &gt; 90° CW. Change the image to indexed color again, and save it as a GIF called stripes2.gif. (Again, keep the defaults for changing and saving the image.) Without looking at the files on your computer, can you predict which file (stripes1 or stripes2) is larger, based on our discussions about run length encoding and lossless compression in the lecture?</p></li>
+</ol>
+<h2 id="part-5-deliverables">Part 5: Deliverables</h2>
+<p>In the exercise folder, find and open logo.psd and photo.psd.</p>
+<p>Assume that you have been asked to put these images onto a web page, and you need to publish them in a format that will allow them to load quickly on a web page without significantly compromising their quality. They also need to fit properly onto an 800x600 screen.</p>
+<p>Put the optimized versions of the images into a folder called week9, and create an index.html file in that folder that includes both images. Add text to the index.html page explaining what changes you made to each of the images, why you made them, and what the resulting file size was. Upload the folder (which should have three items in it–the index.html file and the two web-optimized images) to your igme110 folder on banjo.rit.edu.</p>
+<p>Test it by going to this URL <code>http://people.rit.edu/yourid/igme110/week9</code> (substituting your RIT ID for “your id”)</p>
+<p>The page should avaialbe for me to view by 8am on Saturday, October 28th. (If you choose to work on this on your own rather than attending Thursday’s class, it must be submitted <em>before</em> class begins on Thursday.)</p>
+</body>
+</html>

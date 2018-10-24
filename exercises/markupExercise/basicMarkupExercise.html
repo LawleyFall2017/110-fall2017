@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-TXfwrfuHVznxCssTxWoPZjhcss/hp38gEOH8UPZG/JcXonvBQ6SlsIF49wUzsGno" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../main.css">
+    <title>IGME 110 Week 4 HTML Exercise - Lawley Fall 2018</title>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="prof">
+                <img alt="Photo of Professor Lawley" src="../../lawley-gls.jpg" onclick="document.location.href='http://lawley.rit.edu';" />
+                <p id="name">Professor <br class="mobile-break"> Lawley</p>
+            </div>
+            <div id="title">
+                <h1>Introduction to &amp; <br class="mobile-break">Interactive Media</h1>
+                <h2>IGME-110 / Fall 2018</h2>
+            </div>
+            <div id="menu">
+                <span><a href="../../index.html">Syllabus</a> </span>/
+                <span><a href="../../schedule.html">Schedule</a></span> /
+                <span><a href="https://mycourses.rit.edu/d2l/home/710550">myCourses</a></span> /
+                <span><a href="https://lawley-110-fall2018.slack.com/">Slack</a></span>
+            </div>
+
+        </header>
+
+        <nav id="summary">
+
+            <h3>Deliverables</h3>
+            <p>Show the completed pages to the professor or the TA before the end of class on Tuesday. If you're unable to finish, have them ready to show to the TA at the start of class on Thursday.</p>
+
+            <h3><a href="../../schedule.html#week4">Back to Week 4</a></h3>
+
+
+        </nav>
+
+        <main>
+            <h2 class="page-title">HTML Files &amp; Markup Exercise <span class="weekinfo">(Week 4, Tuesday, Sept 18)</span></h2>
+            <div class="page-desc">
+                <p>In today's exercise, you'll create the HTML document and file structure for a simple web page.</p>
+            </div>
+
+            <div class="subhead" id="part1">
+                <h2>Part 1: Creating the Folder and File Structure</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+
+            <div class="panel">
+
+                <p>On your computer (or on a USB drive) create a folder called RIT Web. Inside that folder, create a folder called www. Inside of the www folder, create a folder called igme110. And inside of the igme110 folder, create a folder called media. The www folder represents your www directory on RIT's web server, which we'll talk about more next week. The igme110 folder is where all of your exercises and projects for this class will be stored.</p>
+
+                <img src="110homepage-folderstructure.png" alt="Folder structure screenshot" class="screenshot">
+
+            </div>
+
+            <div class="subhead" id="part2">
+                <h2>Part 2: Creating Your First HTML Page</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+
+            <div class="panel">
+                <p>Open VS Code (or Brackets), select "Open..." from the File menu, and open the www folder that you just created. You should be able to see the igme110 folder in the file browser pane on the left. Select that folder, and then click on the "new file" icon to create a new file.</p>
+
+                <img src="vscode-newfile.png" alt="VS Code New File Screenshot" class="screenshot">
+
+                <p>If you're using VS Code, you can insert the basic structure for an HTML page by typing html:5 and then pressing enter. If you're using Brackets (or another editor, refer back to the <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics">HTML Basics</a> reading for how to create the basic structure for your document.</p>
+
+                <p>In the title element in the head of the document, put the text "Your Name's First 110 HTML Page".</p>
+
+                <p>In the body of the document, add a level 1 heading element containing your name. Below that, add a paragraph element that that includes a few lines about yourself. Save the file.</p>
+
+                <img src="html1.png" alt="screenshot of initial html" class="screenshot">
+
+                <p>Open a web browser, and in the browser use the File&rarr;Open command to locate and display the index.html file you just created. (Or, if you have previewing capability in your editor, you can use that.) It should look something like this:</p>
+
+                <p><img src="browser1.png" alt="screenshot of starting page" class="screenshot"></p>
+
+            </div>
+
+            <div class="subhead" id="part3">
+                <h2>Part 3: Adding an Image</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+
+            <div class="panel">
+                <p> Find a Creative Commons-licensed image on the web, or an image that you own the rights to, that you’d like to include on your page. Save it in your igme110 folder.</p>
+
+                <p>You’re going to add code to your HTML to display the image on the web page. Add an img tag below the h1 element, and above the p element. For the src attribute, you're going to put the <em>relative</em> path to the image you downloaded. Because the image is in the same directory as your html file, the relative path is just the file name--if you don’t provide any other information besides a file name, the browser will assume that the image is in the same directory as the HTML file it’s displaying. That means this link will work when you're previewing your work on your hard drive, <em>and</em> once you've uploaded it to a web server. (We'll talk about that more next week.) The other required part of an img tag is the alt attribute, which contains text that will display if the browser is unable to display images. My image is a photo of my dog, Morgan, so my code now looks like this:</p>
+
+                <img src="html2.png" alt="Screenshot with img tag" class="screenshot" />
+
+                <p>Save your file, go back to the browser window that you used to view it in the last section, and reload the file. It should now look something like this:</p>
+
+                <img src="browser2.png" alt="web page with image added" class="screenshot">
+
+                <p>Reload your page in the browser; if your image isn’t showing up properly, ask for help now! (If it’s much too big to display properly on the page, try finding and downloading a smaller image from the web; on Thursday you'll learn how to resize the image properly using CSS).</p>
+            </div>
+
+            <div class="subhead" id="part4">
+                <h2>Part 4: Image and Link References</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+
+            <div class="panel">
+                <p>In this section, we're going to look more closely at how to reference other files, both for images and for links.</p>
+
+                <p>When you're referencing another file on the same web server, you can (and typically should) use a <em>relative</em> reference, which points to the file using your current location as the starting point.</p>
+                <ul>
+                    <li>If the file you're referencing is in the same directory as your web page, you just use the file name (as you did with the image on the index.html page).</li>
+                    <li>If the file is in a different directory, you need a directory path as well as the file name. (You can get more information about how to do this in MDN's <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#A_quick_primer_on_URLs_and_paths">Quick Primer on URLs and Paths</a>.)
+                
+                <p>When you're referencing a file on a different web server, you must use what's called a "fully qualified URL"--which means you must include not just the server name and path to the file, but also the protocol (http:// or https://).</a> 
+                    
+                <p>Start by creating another new HTML file in your igme230 directory, and name it page2.html. Give it a title of “Your Name’s Second HTML Page.” (Put that in the title tag, as well as in a level 1 heading on the page.)</p>
+
+                <p>Find another CC-licensed image to use on this page, and save it to the media directory inside the igme110 directory. (Copy down the URL for the source page, because you'll need that later.) Your file structure should look like this now:</p>
+
+                <img src="vscode-allfiles.png" alt="new file structure screenshot" class="screenshot">
+                    
+                <p>To reference this image in your img src, you'll need to include the folder name along with the file name, like this:</p>
+
+                <img src="vscode-mediapath.png" alt="img tag with relative path" class="screenshot">
+
+
+                <p>Next, you're going to add two links to this page; one to the original source of the image you just used, and one back to your first (index) page.</p>
+
+                <p>The link to the site where you found the image will have the full URL (including the protocol) in the href attribute. That's considered a "fully qualified URL". To link to Google, for instance, you can't just use "google.com"--you have to use http://google.com/, or https://google.com. (Don't just link to a search engine or image archive, though--provide a link directly to the page where you found the image.)</p> 
+
+                <p>To reference a page on your own site, you can use a relative path (as you did with the img tag on the index.html file). If the file is in the same directory, all you need is the file name.</p>
+
+                <p>Add both links to the bottom of your page, and make them list items in an unordered list, like this: </p>
+
+                <img src="html3.png" alt="second page html code" class="screenshot">
+
+                <p>Here's how it should look in the browser:</p>
+
+                <img src="browser3.png" alt="second page browser screenshot" class="screenshot">
+
+                <p>Go back to your index.html file, and add a link to the source of the image on that page, and a link to the page2.html. (You can put these in a list again, or you can include them as part of a paragraph of text.)</p>
+
+                <p>Test both of your pages and make sure that the images and links work properly. </p>
+
+                <p>You need to have either the TA or the professor check your work to get credit for this. You can do this in class on Tuesday, during office hours on Wednesday, or at the start of class on Thursday.</p> 
+            </div>
+
+        </main>
+
+        <footer>
+            <a href="http://rit.edu"><img src="../../ritlogo.gif" alt=" RIT Logo"></a>
+            <span>
+                <a id="cc" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons Attribution-ShareAlike License"><i class="fab fa-creative-commons" aria-label="Creative Commons"></i><i class="fab fa-creative-commons-by" aria-label="CC BY"></i><i class="fab fa-creative-commons-sa" aria-label="CC SA"></i></a> &bull; <a href="http://lawley.rit.edu/">Liz Lawley</a></span>
+            <a href="http://igm.rit.edu/"><img src="../../igmlogo.png" alt="School of IGM Logo"></a>
+        </footer>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../expand.js"></script>
+</body>
+
+</html>

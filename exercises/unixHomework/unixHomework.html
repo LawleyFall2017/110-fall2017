@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-TXfwrfuHVznxCssTxWoPZjhcss/hp38gEOH8UPZG/JcXonvBQ6SlsIF49wUzsGno" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../main.css">
+  <title>IGME 110 Unix Prep Homework - Lawley Fall 2018</title>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+      <div id="prof">
+        <img alt="Photo of Professor Lawley" src="../../lawley-gls.jpg" onclick="document.location.href='http://lawley.rit.edu';" />
+        <p id="name">Professor <br class="mobile-break"> Lawley</p>
+      </div>
+      <div id="title">
+        <h1>Introduction to &amp; <br class="mobile-break">Interactive Media</h1>
+        <h2>IGME-110 / Fall 2018</h2>
+      </div>
+      <div id="menu">
+        <span><a href="../../index.html">Syllabus</a> </span>/
+        <span><a href="../../schedule.html">Schedule</a></span> /
+        <span><a href="https://mycourses.rit.edu/d2l/home/710550">myCourses</a></span> /
+        <span><a href="https://lawley-110-fall2018.slack.com/">Slack</a></span>
+      </div>
+
+    </header>
+
+    <nav id="summary">
+
+      <h3>Deliverables</h3>
+      <ul>
+        <li>None; just make sure your account works before class on 9/25!</li>
+      </ul>
+
+      <h3><a href="../../schedule.html#week4">Back to Week 4</a></h3>
+
+
+    </nav>
+
+    <main>
+      <h2 class="page-title">UNIX Prep Exercise <span class="weekinfo">(Week 4, Thursday 9/20)</span></h2>
+      <div class="page-desc">
+        <p>Next week, you’ll be publishing web pages to RIT’s web server. This exercise will help you to determine if your RIT web account was properly configured. Make sure to do this exercise <em>before</em> next week, so that if there are problems you have time to correct them!</p>
+      </div>
+
+      <div class="subhead" id="part1">
+        <h2>Part 1: Logging Into the RIT Web Server</h2>
+        <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+      </div>
+      <div class="panel">
+          <ul>
+          <li><strong>Windows</strong>: Launch the MobaXterm program (installed on all IGM computers, and downloadable from <a href="https://mobaxterm.mobatek.net/">https://mobaxterm.mobatek.net/</a>), and select the SSH icon in the top left corner. Enter banjo.rit.edu as the remote host, and your RIT username (eg abc1234). If you are asked a question about the security key on the server, say yes (this will only happen the first time you log in). Type in your password when prompted.</li>
+          <li><strong>Mac</strong>: Launch the Terminal application (available on all Mac computers), and at the prompt type in the following (replacing yourUserName with your RIT User ID).<br />
+          <code>ssh yourUsername@banjo.rit.edu</code></li>
+        </ul>
+
+        <p><em>(Note: When you type in your password, you will not see any characters on the screen. It will be accepting your input, but you will not see any characters on the screen as you type.</em>)</p>
+
+        <p>If you see the something resembling the following text, it means you’ve successfully connected:</p>
+
+        <pre><code>login: Thu May 18 11:57:55 2017 from [your host name]
+
+RIT information technology resources are for the use of the RIT community only. 
+By using RIT information technology resources you acknowledge that you have read 
+and comply with RIT&#39;s Code of Conduct for Computer and Network Use and RIT&#39;s 
+Information Security Policy and Standards. Use of RIT information technology 
+resources may be monitored and unauthorized use is strictly prohibited.</code></pre>
+
+        <p>If you get an error message, or have difficulty connecting, ask for help in an IGM lab, or contact the <a href="https://www.rit.edu/its/help-support/hours-contact">ITS help desk</a> for assistance--you’ll need to be able to log in to your account in order to do the week 5 in-class exercises.</p>
+
+        <p>Once you've successfully logged in, continue to Part 2.</p>
+
+      </div>
+
+      <div class="subhead" id="part2">
+        <h2>Part 2: Checking Your Configuration</h2>
+        <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+      </div>
+
+      <div class="panel">
+          <p>After connecting to the server, type in the command ls (LS in lowercase) to show a list of your home directory contents. At a minimum, you should see php_data and www in the display.</p>
+
+          <img src="banjo-prompt.png" class="screenshot" alt="UNIX directory listing" />
+
+          <p>If you do not see php_data and www listed when you typed in the ls command, please let me know ASAP--it means RIT did not configure your account properly, and we need to get that fixed that before class next week.</p>
+
+          <p>That’s it! You’re done. To close your session, you can type either <code>logout</code> or <code>exit</code>, and then quit the MobaXterm or Terminal program.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <a href="http://rit.edu"><img src="../../ritlogo.gif" alt=" RIT Logo"></a>
+      <span>
+        <a id="cc" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons Attribution-ShareAlike License"><i class="fab fa-creative-commons" aria-label="Creative Commons"></i><i class="fab fa-creative-commons-by" aria-label="CC BY"></i><i class="fab fa-creative-commons-sa" aria-label="CC SA"></i></a> &bull; <a href="http://lawley.rit.edu/">Liz Lawley</a></span>
+      <a href="http://igm.rit.edu/"><img src="../../igmlogo.png" alt="School of IGM Logo"></a>
+    </footer>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../../expand.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-TXfwrfuHVznxCssTxWoPZjhcss/hp38gEOH8UPZG/JcXonvBQ6SlsIF49wUzsGno" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../main.css">
+    <title>IGME 110 FTP Exercise - Lawley Fall 2018</title>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="prof">
+                <img alt="Photo of Professor Lawley" src="../../lawley-gls.jpg" onclick="document.location.href='http://lawley.rit.edu';" />
+                <p id="name">Professor <br class="mobile-break"> Lawley</p>
+            </div>
+            <div id="title">
+                <h1>Introduction to &amp; <br class="mobile-break">Interactive Media</h1>
+                <h2>IGME-110 / Fall 2018</h2>
+            </div>
+            <div id="menu">
+                <span><a href="../../index.html">Syllabus</a> </span>/
+                <span><a href="../../schedule.html">Schedule</a></span> /
+                <span><a href="https://mycourses.rit.edu/d2l/home/710550">myCourses</a></span> /
+                <span><a href="https://lawley-110-fall2018.slack.com/">Slack</a></span>
+            </div>
+
+        </header>
+
+        <nav id="summary">
+
+            <h3>Deliverables</h3>
+            <ul>
+                <li>HTML file uploaded to your www/igme110 directory </li>
+                <li>File includes your name and photo</li>
+            </ul>
+
+            <p><strong>Noon on Saturday, September 29.</strong></p>
+
+            <h3><a href="../../schedule.html#week5">Back to Week 5</a></h3>
+
+
+        </nav>
+
+        <main>
+            <h2 class="page-title">UNIX Exercise <span class="weekinfo">(Week 5, Tuesday 9/25)</span></h2>
+            <div class="page-desc">
+                <p>This exercise introduces you to the basics of publishing web pages on the RIT people.rit.edu web server.</p>
+            </div>
+
+
+            <div class="subhead" id="part1">
+                <h2>Part 1: Introduction</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+
+            <div class="panel">
+                <p>Today you're going to use FTP (actually SFTP, which uses a secure connection to the server) to put the web pages you created last week onto the banjo server.</p>
+                <p>You can use whichever SFTP (secure File Transfer Program) you’d like to uplaod files to the server. In the IGM labs, we have FileZilla installed, so that’s what’s used in this documentation. (You can download <a href="https://filezilla-project.org/download.php?show_all=1">FileZilla</a> for your own computer at – if you’re using Windows, I strongly suggest downloading the .zip file rather than the .exe file, since the executable file will try to install browser addons that can cause all kinds of problems.)</p>
+
+                <p>Launch FileZilla. Fill in the fields at the top with the following information, and click “Quickconnect”:</p>
+
+                <img src="filezilla-connect.png" alt="FileZilla Connect Screen" class="screenshot">
+
+                <p>FileZilla may ask you if you want it to remember passwords—if you’re doing this in the lab, tell it no. If this is the first time you’ve used FileZilla on a lab computer, it may also give you a warning about an “unknown host key”—if that happens, check the box saying “Always trust this host” and then click OK. If you entered your user ID and password correctly, you should now see something like this:</p>
+
+                <img src="filezilla-files.png" alt="FileZilla File Listing Screen" class="screenshot" />
+
+                <p>The pane on the bottom left shows the files on your computer’s hard drive. In this case, it’s showing everything, including hidden files, that are on the main level of my computer’s hard drive. The pane on the right shows all the files, including hidden files, in your home directory on RIT’s web server.</p>
+
+                <p>In the pane on the left side (local site files), you’ll need to find the directory that you created at the beginning of this exercise. If you put it on a thumb drive, the drive should show up in the Volumes directory. If you put it on the Desktop, it should be in the student directory inside of the Users directory. You want to find your www folder and open it, so that you can see the igme110 and media folders in the left pane. (If you’re using Mac, there may also be a hidden file called .DS_Store, which you can ignore—it’s a Mac system file that is hidden.) If you have trouble finding your files, ask for help.</p>
+
+                <p>In the pane on the right side (server files), double click on the www directory. You should see the 110 directory that you created in Tuesday’s exercise. Leave that alone until you’ve gotten credit for the exercise!</p>
+
+                <p>Once you’ve got the www directory on your local computer on the left side, and your www directory on banjo on the right side, you’re going to drag the igme110 directory from the www folder on the left (your computer) to the www folder on the right (the server). This will copy the folder and its contents to the web server. The file list on the right side should update to show the the new directories.</p>
+
+                <p>Now you need to test the files on the web server, to see if they’re accessible. Use a browser to go to <code>http://people.rit.edu/youruserid/igme110</code> (substituting your RIT ID for <em>youruserid</em>)</p>
+
+                <p>If the files and images show up, great! But it’s possible that they won’t, because the access to the files may not be set properly by default.</p>
+
+            </div>
+
+            <div class="subhead" id="part2">
+                <h2>Part 2: File Permissions</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+            <div class="panel">
+                <p>In FileZilla, select the www folder in the right pane (on the server) Right click on the folder in the right pane, choose “File Permissions” and make sure the permissions include read write and execute for the owner (that’s you), and read and execute for everyone else. The number in the box at the bottom should read “755” which is shorthand for those permissions. (You can either type the number into the box at the bottom, or check the boxes next to the permissions you want.) Make sure the box that reads “recurse into subdirectories” is selected, and choose “Apply to directories only.” Click OK. This should change the permissions for the www directory, and all directories below of it, including the igme110 directory and the test directory.</p>
+
+                <img src="folderpermissions.png" alt="Folder Permissions" />
+
+                <p>Once you’ve changed the permissions on the folders, you need to repeat that process for the files. (Select the "Apply to Files Only" option at the bottom of the window.) They don’t need execute permissions, so the shortcut for their permissions is 644 rather than 755.</p>
+
+                <img src="filepermissions.png" alt="File Permissions" />
+
+                <p>Once you’ve changed the folder and file permissions for the www directory and everything inside of it, go back to the browser and try loading <code>http://people.rit.edu/youruserid/igme110</code> again.</p>
+
+                <p><strong>If it still won’t load, ask for help!</strong></p>
+
+                <p>Notice that the URL I gave you only has the directory name (igme110) and not a file name. That is because the RIT server, like most web servers, automatically looks for a file called index.html in a folder if no other file was specified. If you were to include the file name in the URL (e.g. <code>http://people.rit.edu/youruserid/igme110/index.html</code>), it would also recognize that file and load it. But if you end the URL with the directory name and don’t specify a file, the server will automatically load the index.html file if there is one in that directory.</p>
+
+                <p>Once you've gotten your page to display properly, view the source in the web browser (if you’re using Chrome, type Ctrl-U to display the page source). You’ll probably see a big block of completely unfamiliar code near the top of your page, where your first image is embedded. In the next section, I’ll explain where that came from, and how we can make it go away.</p>
+            </div>
+
+            <div class="subhead" id="part3">
+                <h2>Part 3: Fixing Banjo</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+            <div class="panel">
+                <p>The RIT web server uses a number of server-side programs to help pages across RIT’s sites load faster, but these programs have the side effect of making pages it serves up harder for us to debug and to validate.</p>
+
+                <p>To fix this, you’re going to need to copy a file from my www directory to yours via the command line. As you did on Tuesday, use MobaXterm (or Terminal on a Mac) to connect to banjo.rit.edu, and then type the following commands, <em>exactly</em> as they appear here:</p>
+
+                <code>cd www<br>
+                cp ~ellics/www/.htaccess .htaccess<br> 
+                chmod 644 .htaccess</code>
+
+
+                <p>The first line changes directories into your www directory. The second line copies a file called .htaccess from <strong>my</strong> www directory (~ellics/www) to your current location, which is <strong>your</strong> www directory. And the third line changes the permissions on the .htaccess file so that the web server can read it.</p>
+
+                <p>Go back to your browser, reload your index.html page, and view the source again. If it all worked properly, the block of code inserted by the server that you saw before should now be gone.</p>
+            </div>
+
+            <div class="subhead" id="part4">
+                <h2>Deliverables</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+            <div class="panel">
+                <p>You must have this exercise complete by noon on Saturday, September 30th. On Saturday, my TA will check to see if you completed the work by loading <code>http://people.rit.edu/youruserid/igme110</code>--your index.html file should load properly, with all required components.</p>
+            </div>
+
+        </main>
+
+        <footer>
+            <a href="http://rit.edu"><img src="../../ritlogo.gif" alt=" RIT Logo"></a>
+            <span>
+                <a id="cc" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons Attribution-ShareAlike License"><i class="fab fa-creative-commons" aria-label="Creative Commons"></i><i class="fab fa-creative-commons-by" aria-label="CC BY"></i><i class="fab fa-creative-commons-sa" aria-label="CC SA"></i></a> &bull; <a href="http://lawley.rit.edu/">Liz Lawley</a></span>
+            <a href="http://igm.rit.edu/"><img src="../../igmlogo.png" alt="School of IGM Logo"></a>
+        </footer>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../expand.js"></script>
+</body>
+
+</html>

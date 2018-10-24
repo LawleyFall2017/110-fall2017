@@ -1,0 +1,535 @@
+/* General Formatting */
+
+html {
+    box-sizing: border-box;
+    font-family: "Libre Franklin", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.4;
+    font-size: 16px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+a {
+    color: #f6f;
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom: 1px dotted #f6f;
+}
+
+li {font-size: .9rem;
+    padding-bottom: 3px;}
+
+li  > li {
+    font-size: .8rem;
+}
+
+
+/* Default Header (Small Mobile) */
+
+header {
+    display: grid;
+    width: 100%;
+    height: 120px;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 90px 30px;
+    background-color: #333;
+    border-radius: 0 0 3px 3px;
+    color: white;
+}
+
+#prof {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    text-align: center;
+    padding-top: 5px;
+}
+
+#prof img {
+    max-height: 45px;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+#name {
+    font-size: .5em;
+    font-weight: 300;
+    margin-top: 0;
+    padding-top: 0;
+    line-height: 1;
+}
+
+#title {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#title h1 {
+    font-size: 1.5em;
+    line-height: 1;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: left;
+}
+
+#title h2 {
+    font-size: .9em;
+    line-height: 0;
+    font-weight: 100;
+}
+
+#menu {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    font-size: .6em;
+    font-weight: 400;
+    width: 100%;
+    background-color: #333;
+    border-radius: 0 0 3px 3px;
+    padding: 5px;
+    text-align: right;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    max-width: 1048px;
+}
+
+.sticky+content {
+    padding-top: 20px;
+}
+
+#menu span {
+    padding: 1px 2px;
+    margin: 0 2px;
+    border-radius: 3px;
+}
+
+#menu .inactive-link {
+    color: #ccc;
+}
+
+#menu .selected {
+    background-color: white;
+    color: black;
+}
+
+/* Hide Content on Mobile */
+
+nav, .rubric, #rubric, #expandCollapse {
+    display: none;
+}
+
+/* Default Main Content (Mobile) */
+.warning {
+    border: solid 5px red;
+    border-radius: 3px; 
+    padding: 0 5px;
+    margin-bottom: 1em; 
+}
+.page-title {
+    margin-top: 5px;
+    margin-bottom: 0;
+    border-radius: 3px; 
+    font-size: 1.8em;
+    font-weight: 800;
+    line-height: .8;
+}
+
+.weekinfo {
+    font-weight:200; 
+    font-size: .5em;
+    padding-left: 10px;
+}
+
+
+.page-desc {
+    padding-left: 5px;
+    font-size: .9rem;
+}
+
+.subhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+    color: black;
+    padding: 0 8px;
+    transition: 0.4s;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.subhead h2 {
+    font-size: 1.1em;
+}
+
+.panel {
+    display: none;
+    margin-top: -5px;
+    padding: 0 5px 5px 5px;
+    font-size: .9rem;
+}
+
+
+.panel h3 {
+    font-size: 1.1em;
+    padding-top: 5px; 
+    border-top: 1px dotted black; 
+    margin-bottom: 0;
+
+}
+
+/* Sam Ruby's lovely and elegant solution to hiding the border above the first h3 if it's the first element in the panel (see "General Policies" on index.html for an example) */
+
+    .panel>h3:first-child {
+        border: none;
+    }
+
+
+panel p {
+    padding:  0 5px 0 10px;
+    margin-top: 5px; 
+}
+
+.panel ul, ol {
+    padding-left: 25px; 
+    padding-bottom: 5px;
+    margin-top: .5em;
+    font-size: .95em;
+}
+
+.panel>ul:first-child, .panel>ol:first-child {
+    padding-top: 1em;
+}
+
+.panel li {
+    padding-bottom: .4em;
+}
+
+.panel ol li {
+    font-size: .9rem;
+    padding-bottom: 5px; 
+}
+
+h3 + p {
+    margin-top: .4em;
+}
+
+.examplecode {
+    width: 85%;
+    margin: 0 auto;
+    border: 1px dashed black;
+    padding: .75em;
+    background-color: #eee;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+code, pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+}
+
+.screenshot {
+    max-width: 95%;
+    border: 1px solid black;
+}
+
+.smallscreenshot {
+    max-width: 49%;
+    border: 1px solid black;
+}
+
+.fa-exclamation-circle {
+    margin-right: 5px;
+}
+
+.url {
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* Default Footer (Mobile) */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: .8em;
+    border-top: 1px solid #666;
+    padding: 3px 8px;
+}
+
+footer img {
+    max-height: 40px;
+}
+
+#cc {
+    font-size: 1.4em;
+}
+
+@media screen and (min-width:365px) {
+    header { 
+        height: 150px;
+        grid-template-rows: 120px 30px;
+    }
+
+    #prof img {
+        max-height: 80px;
+    }
+
+    #title h1 {
+        font-size: 1.8em;
+    }
+    #menu {
+        font-size: .7em;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* Main Grid Definition */
+    #wrapper {
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: 250px auto;
+        grid-template-rows: 200px auto auto;
+        grid-gap: 10px;
+        max-width: 1048px;
+    }
+    header {
+        grid-row: 1;
+        grid-column: 1 / 3;
+        height: 200px;
+        grid-template-rows: 170px 30px;
+        }
+    
+    footer {
+        grid-row: 3;
+        grid-column: 1 / 3;
+    }
+
+    main {
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    nav {
+        border: solid lightgrey 1px;
+        border-radius: 3px;
+        grid-row: 2;
+        grid-column: 1 / 2;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+
+    }
+    /* Full Size Header Contents */
+ 
+    #prof img {
+        margin-top: 5px;
+        max-height: 100px;
+    }
+    #prof #name {
+        font-size: .8em;
+    }
+    #title {
+        align-self: center;
+    }
+    #title h1 {
+        font-size: 2.6em;
+    }
+    #title h2 {
+        font-size: 1.8em;
+        padding-left: 5px;
+    }
+    #menu {
+        grid-column: 1 /3;
+        font-size: .9em;
+        padding-bottom: 3px;
+    }
+
+    /* Main Contents */ 
+ 
+    .mobile-break {
+        display: none;
+    }
+
+    #expandCollapse {
+        display: block; 
+        padding-bottom: .5em;
+        padding-right: .5em;
+        text-align: right; 
+    }
+
+    #expandAll, #collapseAll {
+        color: #f6f;
+        cursor: pointer;
+        border: 2px solid #f6f;
+        border-radius: 1px;
+        padding: 0 5px;
+    }
+
+
+    .weekinfo {
+        font-weight:200; 
+        font-size: .8em;
+        padding-left: 0;
+    }
+    
+    .page-desc {
+        padding-left: 5px;
+    }
+    
+    .subhead h2 {
+        font-size: 1.4em;
+    }
+    
+    .panel {
+        background-color: white;
+        /* display: block; */
+        padding-left: 10px;
+    }
+  
+     
+   
+    /* Summary Sidebar */
+        #summary, #toc {
+            font-size: .8em;
+            padding: 0 10px;
+        }
+        #summary h2 {
+            border-bottom: 1px solid black; 
+        }
+
+
+        .weekinfo {
+            font-weight:200; 
+            font-size: .8em;
+        }
+
+        #summary h3, #summary p {
+            margin-top:5px;
+            margin-bottom: 3px;
+        }
+        
+        nav ul {
+            padding-left: 20px;
+            line-height: 1.2;
+            margin-top: 0;
+        }
+
+        nav ul li {
+            padding-top: 5px; 
+        }
+
+        #toc-wrapper {
+            position: fixed;
+        } 
+
+
+        #rubric {
+            display: flex;
+        }
+
+        .rubric {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            grid-gap: 1em;
+            border-color: #333;
+            border-radius: 0 0 3px 3px;
+            font-size: .8em;
+        }
+
+    /* Calendar Sidebar */
+        #calendar {
+            align-items: center;
+            
+        }
+
+        #calendar .month {
+            display: block;
+            margin-bottom: 20px;
+            empty-cells: hide;
+        }
+        #calendar .month_title {
+            background: #666;
+            color: #fff;
+            text-align: center;
+            padding: 0;
+        }
+        #calendar .month_name {
+            font-size: 14px;
+            font-weight: bold;
+            margin: .5em;
+            padding: 3px;
+        }
+        #calendar tr.weekdays td {
+            height: 1em;
+            width: 2em;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        #calendar tr.week {
+            cursor: pointer;
+        }
+        #calendar tr td {
+            text-align: center;
+            background-color: #eaeaea;
+            border: 1px solid #eaeaea;
+            padding: 5px;
+            font-size: 10px;
+        }
+        #calendar tr.inactive_week td {
+            background-color: #fff;
+        }
+}
+
+@media print {
+    #wrapper {
+        display: block;
+    }
+
+    nav, #menu, .fa-angle-left, .fa-angle-down, .fa-angle-double-up, .fa-angle-double-down {
+        display:none;
+    }
+
+    .panel {
+        display: block;
+    }
+
+    .subhead {
+        background-color: none;
+        color: black;
+        border-top: 1px double black;
+    }
+
+    a {
+        color: black;
+    }
+
+    a:after {
+        content:" (" attr(href) ") ";
+        font-size:0.8em;
+        font-weight:normal;
+    }
+
+}

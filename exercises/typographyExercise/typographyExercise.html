@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-TXfwrfuHVznxCssTxWoPZjhcss/hp38gEOH8UPZG/JcXonvBQ6SlsIF49wUzsGno" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../main.css">
+    <title>IGME 110 Typography Exercise - Lawley Fall 2018</title>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="prof">
+                <img alt="Photo of Professor Lawley" src="../../lawley-gls.jpg" onclick="document.location.href='http://lawley.rit.edu';" />
+                <p id="name">Professor <br class="mobile-break"> Lawley</p>
+            </div>
+            <div id="title">
+                <h1>Introduction to &amp; <br class="mobile-break">Interactive Media</h1>
+                <h2>IGME-110 / Fall 2018</h2>
+            </div>
+            <div id="menu">
+                <span><a href="../../index.html">Syllabus</a> </span>/
+                <span><a href="../../schedule.html">Schedule</a></span> /
+                <span><a href="https://mycourses.rit.edu/d2l/home/710550">myCourses</a></span> /
+                <span><a href="https://lawley-110-fall2018.slack.com/">Slack</a></span>
+            </div>
+
+        </header>
+
+        <nav id="summary">
+
+            <h3>Deliverables</h3>
+            <p>Completed HTML and CSS uploaded to specified location on people.rit.edu. We will check <code>http://people.rit.edu/youruserid/igme110/typography/fonts.html</code> to see if you’ve completed the exercise. Make sure you test that URL to ensure that the files appear properly at that URL. The file must be available at the specified URL by noon on Thursday.</p>
+
+            <p><strong>Noon on Saturday, October 13.</strong></p>
+
+            <h3><a href="../../schedule.html#week7">Back to Week 7</a></h3>
+
+
+        </nav>
+
+        <main>
+            <h2 class="page-title">Typography Exercise <span class="weekinfo">(Week 7, Thursday 10/11)</span></h2>
+            <div class="page-desc">
+                <p>The goal of this exercise is to use CSS to modify the typography of a web page in a way that enhances its content.</p>
+            </div>
+
+
+            <div class="subhead" >
+                <h2>Setting Up Your Files</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+
+            <div class="panel">
+                <p>In your www/igme110 folder, create a new folder called <code>typography</code>. Then <strong>right-click</strong> on <a href="fonts.html">fonts.html</a> and choose "Save link as..." to save the HTML file to your typography directory.</p>
+
+                <p>Use Visual Studio Code or Brackets to open the typography folder, and then preview the fonts.html file; it should look something like this: </p>
+
+                <img src="fontsPage1.png" alt="Unformatted Fonts Page" class="screenshot" />
+
+
+            </div>
+
+            <div class="subhead">
+                <h2>Adding CSS Formatting to the Page</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+
+            <div class="panel">
+                <p><em>After each of the steps below, save your fonts.css file and then reload fonts.html in the browser, so you can see the effect of your changes.</em></p>
+
+                <p>In your fonts.css file, add a line to change the base font family for the document. Choose a font family that is likely to work across platforms—there’s a list of cross-platform fonts available at http://web.mit.edu/jmorzins/www/fonts.html. The serif font Georgia and the sans-serif font Verdana were designed specifically for web readability, so if you’re not sure what to use, choose one of those.</p>
+
+                <p>To apply the font you've chosen to the entire page, you can assign it to the html element, like this:</p>
+
+                <code>html { font-family: "fontname";}</code>
+
+                <p> (The quotes around the font name are only necessary if the font has a space in its name.)</p>
+
+                <p>It's also a good idea to specify the base font size for the document; you can add that to the CSS declaration for the html element:</p>
+
+                <code>
+                html { <br>
+                    font-family: "fontname";<br>
+                    font-size: 16px;<br>
+                }</code>
+
+                <p>Often, people use different typefaces for the headings of their document than they do for the body text. Choose another typeface for the headings, and apply it to both the h1 and the h2 elements like this:</p>
+
+                <code>h1, h2 { font-family: "fontname"; }</code>
+
+                <p>Now let's change the size of the text in the blockquote. Font sizes can be can be specfied as absolute values (like pixels or points), or with relatives values (like ems and rems). We set the base font of the document as 16px, so ems and rems will use that as the starting point. If we want the blockquote text to be 80% of the size of the base font size, we would use this: </p>
+                <code>
+                blockquote { <br>
+                    font-size: .8rem; <br>
+                    }<br>
+                </code>
+
+                <p>Next, add a line-height property to the definition for p and blockquote, to increase the line spacing. I typically use a multiplier value of ~1.5, but you can play around with different values (using a multiplier, percentae, or fixed px value) to see how it looks.</p>
+
+                <code>
+                p, blockquote { <br>
+                    line-height: 1.5; <br>
+                    }<br>
+                </code>
+
+                <p>Finally, try constraining the width of all the content now, by setting the width property of the &gt;main&lt; element:</p>
+
+                <code>main { width: value; }</code>
+
+                <p>You'll need to replace the word "value" with the actual width value, of course! Try specifying a relative width using a percentage value (70% or 80%), and then preview the file and try resizing the browser window. Note what happens. Then change the width specification to a fixed pixel value (600px or 800px) and try the same thing. Leave it set to a fixed width.</p>
+
+                <p>Here's what my finished version, using Verdana for headings and Georgia for body text, looked like:</p>
+
+                <img src="fontsPage2.png" alt="First Formatted Fonts Page" class="screenshot" />
+
+                <p>It's different from the original, but I wouldn't call it a huge improvement. Neither Georgia nor Verdana have much personality to them. Let's change the typefaces to give the page a bit more personality.</p> 
+
+
+            </div>
+
+            <div class="subhead">
+                    <h2>Using Web Fonts</h2>
+                    <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+                </div>
+                <div class="panel">
+                    <p>There are several sources for web-based fonts that you can use on your pages. The most popular and widely used one is <a href="http://fonts.google.com/">Google Fonts</a>, which offers a wide array of options for typography on your pages.</p>
+                    <p>It can be difficult to know what typefaces work well with other typefaces--but there are also a lot of options online to help you with that. Google offers some assistance by showing you common pairings. If you go to a font's page and scroll down, you'll see some of the common pairings listed in the sidebar. Here's the page for <a href="https://fonts.google.com/specimen/Lato">Lato</a>, and examples of it being paired with both Oswald and Source Sans Pro:</p>
+                    <img src="pairing1.png" alt="Lato and Oswald" class="smallscreenshot"> <img src="pairing2.png" alt="Lato and Source Sans Pro" class="smallscreenshot">
+
+                    <p>Here's my new version, using Oswald for the headings, and EB Garamond for the body text. What kind of personality does it express?</p> 
+
+                    <img src="pairing3.png" alt="Oswald and EB Garamond" class="screenshot">
+
+                    <p>To include a Google Font in your document, you need to link to it in either your HTML (with a &lt;link&gt; element) or your css (with an @import instruction).</p> 
+
+                    <p>Read through the <a href="https://developers.google.com/fonts/docs/getting_started">Getting Started</a> documentation, and then choose two Google fonts that you think will work well together, and add them to your document. Change the font-family definitions that you have to reference the new fonts.</p>
+
+                </div>
+                           <div class="subhead" id="part2">
+                <h2>Deliverables</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+            <div class="panel">
+                <p>Upload the typography folder and the two files within it (fonts.html and fonts.css) to your www/igme110 directory on banjo.rit.edu. Test the URL http://people.rit.edu/<em><strong>youruserid</strong></em>/igme110/typography/fonts.html, and make sure that the page displays properly. It must be online and working by noon on Saturday, 10/13.</p>
+            </div>
+
+        </main>
+
+        <footer>
+            <a href="http://rit.edu"><img src="../../ritlogo.gif" alt=" RIT Logo"></a>
+            <span>
+                <a id="cc" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons Attribution-ShareAlike License"><i class="fab fa-creative-commons" aria-label="Creative Commons"></i><i class="fab fa-creative-commons-by" aria-label="CC BY"></i><i class="fab fa-creative-commons-sa" aria-label="CC SA"></i></a> &bull; <a href="http://lawley.rit.edu/">Liz Lawley</a></span>
+            <a href="http://igm.rit.edu/"><img src="../../igmlogo.png" alt="School of IGM Logo"></a>
+        </footer>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../expand.js"></script>
+</body>
+
+</html>

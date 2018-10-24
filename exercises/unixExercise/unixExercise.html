@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-TXfwrfuHVznxCssTxWoPZjhcss/hp38gEOH8UPZG/JcXonvBQ6SlsIF49wUzsGno" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../main.css">
+    <title>IGME 110 UNIX Exercise - Lawley Fall 2018</title>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="prof">
+                <img alt="Photo of Professor Lawley" src="../../lawley-gls.jpg" onclick="document.location.href='http://lawley.rit.edu';" />
+                <p id="name">Professor <br class="mobile-break"> Lawley</p>
+            </div>
+            <div id="title">
+                <h1>Introduction to &amp; <br class="mobile-break">Interactive Media</h1>
+                <h2>IGME-110 / Fall 2018</h2>
+            </div>
+            <div id="menu">
+                <span><a href="../../index.html">Syllabus</a> </span>/
+                <span><a href="../../schedule.html">Schedule</a></span> /
+                <span><a href="https://mycourses.rit.edu/d2l/home/710550">myCourses</a></span> /
+                <span><a href="https://lawley-110-fall2018.slack.com/">Slack</a></span>
+            </div>
+
+        </header>
+
+        <nav id="summary">
+
+            <h3>Deliverables</h3>
+            <ul>
+                <li>what</li>
+                <li>gets</li>
+                <li>submitted</li>
+            </ul>
+
+            <p><strong>Due xxx at xxx.</strong> We will grade this exercise by...</p>
+
+            <h3><a href="../../schedule.html#week5">Back to Week 5</a></h3>
+
+
+        </nav>
+
+        <main>
+            <h2 class="page-title">UNIX Exercise <span class="weekinfo">(Week 5, Tuesday 9/25)</span></h2>
+            <div class="page-desc">
+                <p>This exercise is intended to give you a basic level of familiarity with the UNIX environment. It is adapted from a <a href="https://people.ischool.berkeley.edu/~kevin/unix-tutorial/section1.html">tutorial from UC Berkeley</a>.</p>
+            </div>
+
+
+            <div class="subhead" id="part1">
+                <h2>Part 1: Introduction</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+
+            <div class="panel">
+                <p>Before moving on to using UNIX, let's briefly discuss what it is. A computer uses a set of programs, generally called the operating system, to manage its hardware resources (memory, disks, displays, input devices, etc.) on behalf of the user. UNIX is an example of such a system. It was originally developed as a research project at AT&T Bell Labs in 1969. Over the years, many versions of UNIX and UNIX-like operating systems (including Linux and Mac OS X) have been developed. </p>
+
+                <p>You will interact with UNIX through a special program called the shell. The shell prompts you for commands and hands these off to the operating system to be executed after you have typed them in. Commands are composed of two parts: the name of the command itself and arguments. Certain arguments, called options (usually introduced by the "-" character), alter the behavior of the command in a particular way while other arguments specify the entities upon which the command operates (e.g., names of files, computers, users). In the following example:</p>
+
+                <p><code>$ ls -l myfile</code></p>
+
+                <p>"ls" is the name of the command and "-l" and "myfile" are arguments. "-l" is an option which modifies the behavior of the "ls" command, and "myfile" is an argument that narrows the focus of the command. Not all commands require options or arguments; many have intelligent defaults when none are specified.</p>
+
+                <p>The UNIX shell comes in two major flavors: the Bourne shell, sh , and the C shell, csh. Other popular shells are derived from these (e.g., ksh, bash, tcsh). Each shell uses a particular character (or string of characters) to prompt the user for commands; not surprisingly, this is known as a shell prompt. Exercises in this tutorial show the default shell prompt for bash, the "$" character. In most cases, they will work equally well with most other shells.</p>
+
+            </div>
+
+            <div class="subhead" id="part2">
+                <h2>Part 2: Logging In and Logging Out</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+            <div class="panel">
+                <p>Since UNIX supports multiple users at one time, you must identify yourself to the system before you can begin using it. This process is called logging in. When you connect to a computer running UNIX (often called a UNIX host), you are asked to provide two pieces of information in order to log in: your username (also called a login name), which is your identity on the system, and your password, which proves (or at least improves the likelihood) that you are indeed who you say you are.</p>
+
+                <p>Launch MobaXterm (on Windows) or Terminal (on a Mac), and connect to the banjo.rit.edu host with your RIT user ID and password. Of course, you'll need to substitute your actual username and the hostname of the computer you want to connect to in place of "abc1234".</p>
+
+                <div class="examplecode">
+                    <p>$ <strong>ssh abc1234@banjo.rit.edu</strong><br /> abc1234@banjo.rit.edu's password: <strong>&lt;your_password_here&gt;</strong></p>
+
+                    <p>Last login: Thu May 18 11:57:55 2017 from [some host name]</p>
+
+                    <p>RIT information technology resources are for the use of the RIT community only. By using RIT information technology resources you acknowledge that you have read and comply with RIT&#39;s Code of Conduct for Computer and Network Use and RIT&#39;s Information Security Policy and Standards. Use of RIT information technology resources may be monitored and unauthorized use is strictly prohibited.<br><br> $
+                    </p>
+                </div>
+
+                <p>When you log in, the system will print several lines of information on the screen. After you've logged in a few times and the novelty has worn off, you may be tempted to ignore this. Don't! There are a couple of important pieces of information displayed here.</p>
+
+                <p>The first line you see after typing your password tells you when you last logged in. If you see something like: <br>
+                    <code>Last login: Fri Feb 14 03:52:12 from evil.hackers-r-us.org</code><br> and you've never heard of a machine called "evil," you might begin to suspect that your account has been compromised...</p>
+
+                <p>The next several lines are a standard message that RIT displays to all logged in users. After this, you will see the shell prompt ("$" in our example). You are now ready to begin issuing commands to the UNIX system!</p>
+
+                <p>In order to ease ourselves into this business, let's begin with a very simple command, <strong>whoami</strong>. This command requires no options or arguments, and has the highly desirable side effect of reassuring the user by confirming his or her identity.</p>
+
+                <p>Enter the whoami command at the shell prompt and see what happens.</p>
+
+                <div class="examplecode">
+                    $<strong>whoami</strong><br> abc1234
+                </div>
+
+                <p>That's it — all this command does is print the login name of the current user. Congratulations, you've just had your first taste of the power of UNIX!</p>
+
+
+                <p>Now that you've learned the basics of entereing commands, end your UNIX session by logging out, using the cleverly-named <strong><code>logout</code></strong> command.</p>
+
+                <p>Enter the logout command at the shell prompt.</p>
+
+                <div class="examplecode">
+                    $<strong>logout</strong><br> Connection closed by foreign host.
+                </div>
+
+                <p>Of course, you'll have to log back in to continue with the tutorial!</p>
+            </div>
+
+            <div class="subhead" id="part3">
+                <h2>Part 3: Looking Around</h2>
+                <i class="fas fa-angle-left" aria-label="expand/collapse arrow"></i>
+            </div>
+            <div class="panel">
+                <p>Like other operating systems, UNIX organizes user data, programs, etc. into structures called files. Files, in turn, are placed in directories (often referred to as "folders"). Directories are organized into a hierarchical structure, something like an upside down tree. This entire structure, including all of the directories and files, as well as the special structures the operating system uses to keep track of them, is called a filesystem. A simplified version of the banjo filesystem is shown below:</p>
+
+                <img src="banjo-structure.png" alt="banjo file hierarchy" class="screenshot" />
+
+                <p>At the top of the hierarchy is a special directory, called the root directory (following the upside down tree analogy — try standing on your head if this is not clear!). This directory is represented by the "/" character. Under the root directory, you will find a number of other directories (e.g., "bin" or "etc" in Figure 3.1). Under each of these, you might find more directories, and so on. Within these directories, you will find files containing such things as programs (like the web server software), system configuration information, or user data (like my index.html file).</p>
+
+                <p>As you use UNIX, the shell keeps track of your current location within the filesystem. This is called the working directory. The pwd ("print working directory") command tells you where you are in the filesystem by printing the current working directory. Let's give it a try.</p>
+
+                <div class="examplecode">
+                    $ <strong>pwd</strong><br> /home/abc1234
+                </div>
+
+                <p>When you log in, UNIX initially sets your working directory to your home directory. This is a special location where you store your personal data as well as the configuration files that govern your account. Since you've just logged in and haven't yet learned how to change directories, what you see when you enter the pwd command is your home directory.</p>
+
+                <p>The location of a file or directory within the filesystem is called a pathname, because it describes the path you must follow to find it. You can construct a pathname by starting at the root directory and working your way down. Each level in the hierarchy is separated by the "/" character. If you refer back to the file structure diagram above, you'll see that there is a directory called home underneath the root directory, and underneath that is another directory called abc1234. The absolute pathname to that user's home directory would be /home/abc1234 (the first "/" character represents the root directory; the second separates "home" from "abc1234"). This type of pathname is called an absolute pathname because it starts from a fixed reference point, the root directory ("/"). A relative pathname, on the other hand, describes the location of a file in relation to the current working directory. If the current working directory were /home, the relative pathname for accessing the abc1234 directory would simply be abc1234.</p>
+
+                <p>To change the current working directory, use the cd command followed by the pathname of the desired directory.</p>
+
+                <p>Use the <code><strong>cd</strong></code> command to move to the directory just above your home directory.</p>
+
+                <div class="examplecode">
+                    $ <strong>cd /home</strong><br> $ <strong>pwd</strong><br> /home
+                </div>
+
+                <p>Note that <strong>cd</strong> does not give you any feedback if it succeeds. You can use <code><strong>pwd</strong></code> to verify the new working directory. Now try <code><strong>cd</strong></code> without any arguments. Where does it take you?</p>
+
+                <div class="examplecode">
+                    $ <strong>cd</strong><br> $ <strong>pwd</strong><br> /home/abc1234
+                </div>
+
+                <p>In the examples above, you used an absolute pathname ("/home") to move to the directory above your home directory. You could also have used a relative pathname. The directory above the current working directory, known as the
+                    <em>parent directory</em>, is identified by a special notation: ".." (two period characters).</p>
+
+                <p>Use the <code><strong>cd</strong></code> command to move up one level in the directory tree.</p>
+
+                <div class="examplecode">
+                    $ <strong>cd ..</strong><br> $ <strong>pwd</strong><br> /home
+                </div>
+
+                <p>Now use a relative pathname to return to your home directory.</p>
+
+                <div class="examplecode">
+                    $ <strong>cd abc1234</strong><br> $ <strong>pwd</strong><br> /home/abc1234
+                </div>
+
+                <p>Now that you know where your home directory is, let's look at the files and directories stored in it. You list files and directories with the <code><strong>ls</strong></code> command.</p>
+
+                <p>Make sure you're in your home directory (/home/abc1234), and then enter the <code><strong>ls</strong></code> command at the shell prompt. You should see something like this:</p>
+
+                <div class="examplecode">
+                    <pre>
+$ <strong>ls</strong>
+</pre>
+                </div>
+
+                <p>Notice that the list printed by <code><strong>ls</strong></code> does not show any distinction between files and directories. To get a more useful listing, enter the command again, adding the "-F" option.</p>
+
+                <div class="examplecode">
+<pre>
+$ <strong>ls -F</strong>
+php_data/     www/
+</pre>
+                </div>
+
+                <p>The "-F" option causes <code><strong>ls</strong></code> to produce a "fancy" listing. A special character, appended to the filename, is used to identify certain types of files (see table 3.1). Regular files remain unadorned.</p>
+
+                <p>The <code><strong>ls</strong></code> command is a bit reticent; it won't actually tell you about <strong>all</strong> your files unless you explicitly ask it to do so via the "-a" option.</p>
+
+                <p>Enter the <code><strong>ls</strong></code> command with the "-a" and "-F" options.</p>
+
+                <div class="examplecode">
+<pre>
+$ <strong>ls -aF</strong>
+./  ../  .cshrc*  .history  php_data/  setup.sh*  www/ 
+</pre>
+               </div>
+
+                <p>Several new files showed up this time. "./" represents the current directory and "../" represents the parent directory. The other files beginning with "." are hidden files--in this case, configuration files that control the behavior of various programs.</p>
+
+                <p>You can get more information about files you are listing by using the "-l" option with <code><strong>ls</strong></code>.</p>
+
+                <div class="examplecode">
+<pre>
+$ <strong>ls -alF</strong>
+drwxr-xr-x  4 abc1234 student   98 Sep 27  2016 ./
+drwxr-xr-x 71 root    root       0 Aug 25 21:09 ../
+-rw-r-xr-x  1 abc1234 student 2188 May 20  2016 .cshrc*
+-rw-------  1 abc1234 student 2681 Aug 29  2017 .history
+drwx------  3 abc1234 student   61 May 20  2016 php_data/
+-rwxr-xr-x  1 abc1234 student  481 May 20  2016 setup.sh*
+drwxr-xr-x 10 abc1234 student 4096 Dec  7  2017 www/
+</pre>
+                </div>
+
+                <p>The long listing generated by adding the "-l" option to the command produces information in seven columns. Here's how to decode that information, using the last line as our example: </p>
+
+                <ul>
+                    <li><code>drwxr-xr-x</code>: The first letter indicates whether the item is a directory (d) or a file (-). The next nine letters show the permissions for the file.</li>
+                    <li><code>10</code>: Number of links to the file (not relevant for our purposes)</li>
+                    <li><code>abc1234</code>: The username of the file's owner (in this cae, you)</li>
+                    <li><code>student</code>: The user group of the file's owner--student, faculty, or staff.</li>
+                    <li><code>Dec 7 2017</code>: The last modification date for the file</li>
+                    <li><code>4096</code>: The size of the file (in bytes)</li>
+                    <li><code>www/</code>: The file name</li>
+                </ul>
+
+            </div>
+        </main>
+
+        <footer>
+            <a href="http://rit.edu"><img src="../../ritlogo.gif" alt=" RIT Logo"></a>
+            <span>
+                <a id="cc" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons Attribution-ShareAlike License"><i class="fab fa-creative-commons" aria-label="Creative Commons"></i><i class="fab fa-creative-commons-by" aria-label="CC BY"></i><i class="fab fa-creative-commons-sa" aria-label="CC SA"></i></a> &bull; <a href="http://lawley.rit.edu/">Liz Lawley</a></span>
+            <a href="http://igm.rit.edu/"><img src="../../igmlogo.png" alt="School of IGM Logo"></a>
+        </footer>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../expand.js"></script>
+</body>
+
+</html>

@@ -64,5 +64,5 @@ Download the file [shortsword.mp4](shortsword.mp4). This is Creative Commons lic
 
 ## Exercise Deliverables
 
-Submit both animations to the myCourses dropbox. If you come to class on Thursday, it is due by 6pm on Saturday, November 11th.
+Submit both animations to the myCourses dropbox. It is due by 6pm on Saturday, November 11th.
 
